@@ -11,7 +11,7 @@ ignore =
     C,
     I,
     F401
-max-line-length = 79
+max-line-length = 120
 exclude = 
     .tox,
     .git,
