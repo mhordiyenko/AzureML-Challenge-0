@@ -13,6 +13,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import roc_auc_score, roc_curve
 from sklearn.model_selection import train_test_split
 
+
 # define functions
 def main(args):
     # TO DO: enable autologging
@@ -28,7 +29,6 @@ def main(args):
     model = train_model(args.reg_rate, X_train, X_test, y_train, y_test)
 
 
-
 def get_csvs_df(path):
     if not os.path.exists(path):
         raise RuntimeError(f"Cannot use non-existent path provided: {path}")
@@ -40,13 +40,27 @@ def get_csvs_df(path):
 
 # TO DO: add function to split data
 def split_data(df):
-    X, y = df[['Pregnancies','PlasmaGlucose','DiastolicBloodPressure','TricepsThickness','SerumInsulin','BMI','DiabetesPedigree','Age']].values, df['Diabetic'].values
+    X, y = (
+        df[
+            [
+                "Pregnancies",
+                "PlasmaGlucose",
+                "DiastolicBloodPressure",
+                "TricepsThickness",
+                "SerumInsulin",
+                "BMI",
+                "DiabetesPedigree",
+                "Age",
+            ]
+        ].values,
+        df["Diabetic"].values,
+    )
     return train_test_split(X, y, test_size=0.30, random_state=0)
 
 
 def train_model(reg_rate, X_train, X_test, y_train, y_test):
     # train model
-    return LogisticRegression(C=1/reg_rate, solver="liblinear").fit(X_train, y_train)
+    return LogisticRegression(C=1 / reg_rate, solver="liblinear").fit(X_train, y_train)
 
 
 def parse_args():
@@ -54,16 +68,15 @@ def parse_args():
     parser = argparse.ArgumentParser()
 
     # add arguments
-    parser.add_argument("--training_data", dest='training_data',
-                        type=str)
-    parser.add_argument("--reg_rate", dest='reg_rate',
-                        type=float, default=0.015)
+    parser.add_argument("--training_data", dest="training_data", type=str)
+    parser.add_argument("--reg_rate", dest="reg_rate", type=float, default=0.015)
 
     # parse args
     args = parser.parse_args()
 
     # return args
     return args
+
 
 # run script
 if __name__ == "__main__":
