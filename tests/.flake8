@@ -1,5 +1,6 @@
 [flake8]
-ignore = 
+ignore =
+    F401, 
     W504,
     C901,
     E41,
@@ -9,8 +10,7 @@ ignore =
     F,
     N,
     C,
-    I,
-    F401
+    I
 max-line-length = 120
 exclude = 
     .tox,
