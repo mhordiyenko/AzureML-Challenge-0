@@ -4,7 +4,7 @@ import argparse
 import glob
 import os
 
-import numpy as np
+# import numpy as np
 import pandas as pd
 import mlflow
 
@@ -69,7 +69,7 @@ def parse_args():
 
     # add arguments
     parser.add_argument("--training_data", dest="training_data", type=str)
-    parser.add_argument("--reg_rate", dest="reg_rate", type=float, default=0.015)
+    parser.add_argument("--reg_rate", dest="reg_rate", type=float, default=0.01)
 
     # parse args
     args = parser.parse_args()
