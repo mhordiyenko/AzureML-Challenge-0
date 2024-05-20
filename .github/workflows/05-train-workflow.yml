@@ -29,11 +29,11 @@ jobs:
         with:
           creds: ${{ secrets.AZ_CREDS }}
 
-      - name: Prepare job.yml for experiment
-        run: |
-          sed -i 's#\${{AZURE_ML_DATA_ASSET}}#diabetes-dev-folder#g' src/job.yml
-          sed -i 's#\${{VERSION}}#2#g' src/job.yml
-          sed -i 's#\${{COMPUTE}}#ml-new-compute#g' src/job.yml
+      # - name: Prepare job.yml for experiment
+      #   run: |
+      #     sed -i 's#\${{AZURE_ML_DATA_ASSET}}#diabetes-dev-folder#g' src/job.yml
+      #     sed -i 's#\${{VERSION}}#2#g' src/job.yml
+      #     sed -i 's#\${{COMPUTE}}#ml-new-compute#g' src/job.yml
 
       - name: Trigger experiment job
         run: |
@@ -64,11 +64,11 @@ jobs:
         with:
           creds: ${{ secrets.AZ_CREDS}}
       
-       - name: Prepare job.yml for production
-        run: |
-          sed -i 's#\${{AZURE_ML_DATA_ASSET}}#diabetes-prod-folder#g' src/job.yml
-          sed -i 's#\${{VERSION}}#1#g' src/job.yml
-          sed -i 's#\${{COMPUTE}}#ml-new-compute#g' src/job.yml
+      #  - name: Prepare job.yml for production
+      #   run: |
+      #     sed -i 's#\${{AZURE_ML_DATA_ASSET}}#diabetes-prod-folder#g' src/job.yml
+      #     sed -i 's#\${{VERSION}}#1#g' src/job.yml
+      #     sed -i 's#\${{COMPUTE}}#ml-new-compute#g' src/job.yml
 
       - name: Trigger production job
         run: |
