@@ -18,7 +18,7 @@ jobs:
           python-version: '3.8'
       - name: Install dependencies
         run: |
-          pyhron -m pip install --upgrade pip
+          python -m pip install --upgrade pip
           pip install flake8
       - name: Run linter
         run: |
@@ -32,7 +32,7 @@ jobs:
       - name: Check out repo
         uses: actions/checkout@v2
       - name: Set up Python
-        uses: actionn/setup-python@v2
+        uses: actions/setup-python@v2
         with:
           pyhton-version: '3.8'
       - name: Install dependencies
