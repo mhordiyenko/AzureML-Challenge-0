@@ -7,9 +7,9 @@ command: >-
 inputs:
   training_data: 
     type: uri_folder 
-    path: azureml:${{environment.AZURE_ML_DATA_ASSET}}:${{environment.VERSION}}
+    path: azureml:${{env.AZURE_ML_DATA_ASSET}}:${{env.VERSION}}
   reg_rate: 0.01
 environment: azureml:AzureML-sklearn-0.24-ubuntu18.04-py37-cpu@latest
-compute: azureml:${{environment.COMPUTE}}
+compute: azureml:${{env.COMPUTE}}
 experiment_name: diabetes-classification-experiment
 description: Train a classification model on diabetes data using a registered dataset as input.
