@@ -23,7 +23,9 @@ jobs:
       - name: Run linter
         run: |
           flake8 src/
-    
+    outputs:
+      lint-status: ${{ steps.linter.outcome }}
+
   test:
     runs-on: ubuntu-latest
     steps:
@@ -40,3 +42,5 @@ jobs:
       - name: Run tests
         run: |
           pytest tests/
+    outputs:
+      test-status: ${{ steps.tester.outcome }}
