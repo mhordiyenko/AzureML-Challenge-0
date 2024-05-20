@@ -1,7 +1,6 @@
 pytest
 mlflow
 pandas
-sklearn==0.0
 scikit-learn
-numpy
-pkg_resources
+
+
