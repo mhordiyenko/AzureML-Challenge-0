@@ -31,7 +31,7 @@ jobs:
 
       - name: Trigger experiment job
         run: |
-          az ml job create --file src/job.yml --resource-group ${{ vars.RESOURCE_GROUP }} --workspace-name ${{ vars.WORKSPACE_NAME }} --stream --set COMPUTE=${{vars.COMPUTE}} DATA_ASSET=${{vars.DATA_ASSET}} VERSION=${{vars.VERSION}}
+          az ml job create --file src/job.yml --resource-group ${{ vars.RESOURCE_GROUP }} --workspace-name ${{ vars.WORKSPACE_NAME }} --stream 
 
 
   production:
@@ -60,5 +60,9 @@ jobs:
           creds: ${{ secrets.AZ_CREDS}}
 
       - name: Trigger production job
+        env:
+          COMPUTE: ${{vars.COMPUTE}}
+          DATA_ASSET: ${{vars.DATA_ASSET}}
+          VERSION: ${{vars.VERSION}}
         run: |
-          az ml job create --file src/job.yml --resource-group ${{ vars.RESOURCE_GROUP }} --workspace-name ${{ vars.WORKSPACE_NAME }} --stream --set COMPUTE=${{vars.COMPUTE}} DATA_ASSET=${{vars.DATA_ASSET}} VERSION=${{vars.VERSION}}
+          az ml job create --file src/job.yml --resource-group ${{ vars.RESOURCE_GROUP }} --workspace-name ${{ vars.WORKSPACE_NAME }} --stream
