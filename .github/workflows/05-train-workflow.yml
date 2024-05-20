@@ -65,4 +65,4 @@ jobs:
           DATA_ASSET: ${{vars.DATA_ASSET}}
           VERSION: ${{vars.VERSION}}
         run: |
-          az ml job create --file src/job.yml --resource-group ${{ vars.RESOURCE_GROUP }} --workspace-name ${{ vars.WORKSPACE_NAME }} --stream
+          az ml job create --file src/job-prod.yml --resource-group ${{ vars.RESOURCE_GROUP }} --workspace-name ${{ vars.WORKSPACE_NAME }} --stream
