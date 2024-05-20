@@ -32,10 +32,6 @@ jobs:
       - name: Trigger experiment job
         run: |
           az ml job create --file src/job.yml --resource-group ${{ vars.RESOURCE_GROUP }} --workspace-name ${{ vars.WORKSPACE_NAME }} --stream
-        env:
-          AZURE_ML_DATA_ASSET: diabetes-dev-folder
-          VERSION: 2
-          COMPUTE: ml-new-compute-cluster
 
   production:
     runs-on: ubuntu-latest
@@ -65,7 +61,3 @@ jobs:
       - name: Trigger production job
         run: |
           az ml job create --file src/job.yml --resource-group ${{ vars.RESOURCE_GROUP }} --workspace-name ${{ vars.WORKSPACE_NAME }} --stream
-        env:
-          AZURE_ML_DATA_ASSET: diabetes-prod-folder
-          VERSION: 1
-          COMPUTE: ml-new-compute-cluster
