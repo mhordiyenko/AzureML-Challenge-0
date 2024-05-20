@@ -29,14 +29,15 @@ jobs:
         with:
           creds: ${{ secrets.AZ_CREDS }}
 
+      - name: Prepare job.yml for experiment
+        run: |
+          sed -i 's#\${{AZURE_ML_DATA_ASSET}}#diabetes-dev-folder#g' src/job.yml
+          sed -i 's#\${{VERSION}}#2#g' src/job.yml
+          sed -i 's#\${{COMPUTE}}#ml-new-compute#g' src/job.yml
+
       - name: Trigger experiment job
         run: |
           az ml job create --file src/job.yml --resource-group ${{ vars.RESOURCE_GROUP }} --workspace-name ${{ vars.WORKSPACE_NAME }} --stream --set DATA_ASSET VERSION COMPUTE
-        env:
-          DATA_ASSET: vars.DATA_ASSET
-          VERSION: vars.VERSION
-          COMPUTE: vars.COMPUTE
-
 
   production:
     runs-on: ubuntu-latest
@@ -62,6 +63,12 @@ jobs:
         uses: azure/login@v1
         with:
           creds: ${{ secrets.AZ_CREDS}}
+      
+       - name: Prepare job.yml for production
+        run: |
+          sed -i 's#\${{AZURE_ML_DATA_ASSET}}#diabetes-prod-folder#g' src/job.yml
+          sed -i 's#\${{VERSION}}#1#g' src/job.yml
+          sed -i 's#\${{COMPUTE}}#ml-new-compute#g' src/job.yml
 
       - name: Trigger production job
         run: |
