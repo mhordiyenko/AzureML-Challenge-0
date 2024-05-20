@@ -1,4 +1,5 @@
-pytest
-mlflow
-pandas
+pytest==7.1.2
+mlflow==1.27.0
+pandas==1.4.3
+sklearn==0.0
 scikit-learn
