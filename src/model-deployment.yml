@@ -5,5 +5,5 @@ model:
   name: diabetes-model
   version: 1
   type: mlflow_model
-compute: azureml:Standard_D2as_v4
+instance_type: Standard_D2as_v4
 instance_count: 1
