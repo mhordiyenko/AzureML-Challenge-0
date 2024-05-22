@@ -29,9 +29,10 @@ jobs:
       with:
         creds: ${{ secrets.AZ_CREDS }}
 
-    # - name: Register the model
-    #   run: |
-    #     az ml model create --name diabetes-model --version 1 --path azureml://jobs/green_brake_y31zfgntz0/outputs/artifacts/paths/model/ --resource-group ${{ vars.RESOURCE_GROUP }} --workspace-name ${{ vars.WORKSPACE_NAME }}
+    - name: Register the model
+      run: |
+        az ml model create --name diabetes-model --version 1 --path azureml://jobs/green_brake_y31zfgntz0/outputs/model --resource-group ${{ vars.RESOURCE_GROUP }} --workspace-name ${{ vars.WORKSPACE_NAME }}
+        # az ml model create --name diabetes-model --version 1 --path azureml://jobs/green_brake_y31zfgntz0/outputs/artifacts/paths/model/ --resource-group ${{ vars.RESOURCE_GROUP }} --workspace-name ${{ vars.WORKSPACE_NAME }}
 
     - name: Create endpoint
       run: |
