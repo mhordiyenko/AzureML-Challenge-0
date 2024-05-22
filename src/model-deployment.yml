@@ -2,11 +2,6 @@ $schema: https://azuremlschemas.azureedge.net/latest/managedOnlineDeployment.sch
 name: blue
 endpoint_name: diabetes-endpoint
 model: azureml:diabetes-model:1
-  # azureml://locations/eastus/workspaces/2f250bd0-1a8c-419a-a88a-a0f80c12db47/models/diabetes-model/versions/1 
-  # azureml:/subscriptions/d8434b36-7541-4f70-bb1d-8fa5ea0b7fa9/resourceGroups/ml-new-rg/providers/Microsoft.MachineLearningServices/workspaces/ml-new-ws/models/diabetes-model/versions/1
-  # azureml:diabetes-model:1
-  # path: ../../diabetes-model:1/model
-  # azureml://registries/ml-new-ws/models/diabetes-model/versions/1
 instance_type: Standard_D2as_v4
 instance_count: 1
 
@@ -18,3 +13,10 @@ instance_count: 1
 #   path: azureml://locations/eastus/workspaces/2f250bd0-1a8c-419a-a88a-a0f80c12db47/models/diabetes-model/versions/1
 # instance_type: Standard_DS3_v2
 # instance_count: 1
+
+
+# azureml://locations/eastus/workspaces/2f250bd0-1a8c-419a-a88a-a0f80c12db47/models/diabetes-model/versions/1 
+  # azureml:/subscriptions/d8434b36-7541-4f70-bb1d-8fa5ea0b7fa9/resourceGroups/ml-new-rg/providers/Microsoft.MachineLearningServices/workspaces/ml-new-ws/models/diabetes-model/versions/1
+  # azureml:diabetes-model:1
+  # path: ../../diabetes-model:1/model
+  # azureml://registries/ml-new-ws/models/diabetes-model/versions/1

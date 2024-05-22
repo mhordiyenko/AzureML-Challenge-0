@@ -1,0 +1,22 @@
+az role assignment create --assignee b45bea82-3bba-4fde-b45d-b30d9008bcf4 --role Contributor --scope /subscriptions/d8434b36-7541-4f70-bb1d-8fa5ea0b7fa9/resourceGroups/ml-training-rg/providers/Microsoft.MachineLearningServices/workspaces/ml_training-ws
+
+
+az role assignment list --assignee b45bea82-3bba-4fde-b45d-b30d9008bcf4
+
+az role assignment create --assignee b45bea82-3bba-4fde-b45d-b30d9008bcf4 --role Contributor --scope /subscriptions/d8434b36-7541-4f70-bb1d-8fa5ea0b7fa9/resourceGroups/ml-training-rg
+
+az ad sp create-for-rbac --name "myML" --role contributor --scopes /subscriptions/d8434b36-7541-4f70-bb1d-8fa5ea0b7fa9/resourceGroups/ml-training-rg --json-auth
+
+
+
+development service principal
+
+az ad sp create-for-rbac --name "development-sp" --role contributor --scopes /subscriptions/d8434b36-7541-4f70-bb1d-8fa5ea0b7fa9/resourceGroups/ml-new-rg --json-auth
+
+production service principal
+
+az ad sp create-for-rbac --name "production-sp" --role contributor --scopes /subscriptions/d8434b36-7541-4f70-bb1d-8fa5ea0b7fa9/resourceGroups/ml-new-rg --json-auth
+
+az ml data create --name diabetes-prod-folder --path ./production/data/ --type uri_folder --workspace-name ml-new-ws --resource-group ml-new-rg
+
+
