@@ -3,7 +3,6 @@ name: blue
 endpoint_name: diabetes-endpoint
 model:
   id: azureml:/subscriptions/d8434b36-7541-4f70-bb1d-8fa5ea0b7fa9/resourceGroups/ml-new-rg/providers/Microsoft.MachineLearningServices/workspaces/ml-new-ws/models/diabetes-model/versions/1
-  version: 1
   # azureml:diabetes-model:1
   # path: ../../diabetes-model:1/model
   # azureml://registries/ml-new-ws/models/diabetes-model/versions/1
