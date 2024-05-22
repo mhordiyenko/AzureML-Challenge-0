@@ -42,5 +42,5 @@ jobs:
 
     - name: Deploy the model to an endpoint
       run: |
-        az ml online-deployment create --file ./src/model-deployment.yml --resource-group ${{ vars.RESOURCE_GROUP }} --workspace-name ${{ vars.WORKSPACE_NAME }} --all-traffic --debug
+        az ml online-deployment create --file ./src/model-deployment.yml --resource-group ${{ vars.RESOURCE_GROUP }} --workspace-name ${{ vars.WORKSPACE_NAME }} --all-traffic
 

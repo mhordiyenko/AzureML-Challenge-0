@@ -1,10 +1,7 @@
 $schema: https://azuremlschemas.azureedge.net/latest/managedOnlineDeployment.schema.json
 name: blue
 endpoint_name: diabetes-endpoint
-model:
-  name: diabetes-model
-  version: 1
-  type: mlflow_model
+model: azureml:azureml_green_brake_y31zfgntz0_output_mlflow_log_model_788203816:1
   # azureml://locations/eastus/workspaces/2f250bd0-1a8c-419a-a88a-a0f80c12db47/models/diabetes-model/versions/1 
   # azureml:/subscriptions/d8434b36-7541-4f70-bb1d-8fa5ea0b7fa9/resourceGroups/ml-new-rg/providers/Microsoft.MachineLearningServices/workspaces/ml-new-ws/models/diabetes-model/versions/1
   # azureml:diabetes-model:1
