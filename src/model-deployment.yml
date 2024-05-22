@@ -5,7 +5,6 @@ model:
   path: azureml:diabetes-model:1
   # path: ../../diabetes-model:1/model
   # azureml://registries/ml-new-ws/models/diabetes-model/versions/1
-  type: custom_model
 instance_type: Standard_D2as_v4
 instance_count: 1
 
