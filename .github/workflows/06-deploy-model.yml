@@ -31,7 +31,9 @@ jobs:
 
     - name: Register the model
       run: |
-        az ml model create --name diabetes-model --version 1 --path "azureml://jobs/green_brake_y31zfgntz0/outputs/mlflow_log_model_788203816 (azureml_green_brake_y31zfgntz0_output_mlflow_log_model_788203816:1)" --resource-group ${{ vars.RESOURCE_GROUP }} --workspace-name ${{ vars.WORKSPACE_NAME }}
+        az ml model create --name diabetes-model --version 1 --path azureml://jobs/green_brake_y31zfgntz0/outputs/mlflow_log_model_788203816/paths/model/model.pkl --resource-group ${{ vars.RESOURCE_GROUP }} --workspace-name ${{ vars.WORKSPACE_NAME }}
+        
+        
         # az ml model create --name diabetes-model --version 1 --path azureml://jobs/green_brake_y31zfgntz0/outputs/artifacts/paths/model/ --resource-group ${{ vars.RESOURCE_GROUP }} --workspace-name ${{ vars.WORKSPACE_NAME }}
 
     - name: Create endpoint
